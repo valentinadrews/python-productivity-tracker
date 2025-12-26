@@ -30,5 +30,15 @@ class ProductivityTracker:
 
 if __name__ == "__main__":
     tracker = ProductivityTracker()
-    # example:
-    tracker.log_status(sleep_hours=2, social_battery=10)
+    
+    print("--- Python Productivity Tracker ---")
+    try:
+        
+        horas = float(input("¿How much hours did you sleep last night? "))
+        bateria = int(input("¿How are your social batery today(1-10)? "))
+        
+        tracker.log_status(sleep_hours=horas, social_battery=bateria)
+        print("\n[success] Saved data in database.json")
+        
+    except ValueError:
+        print("[ERROR] Please, put only numbers.")
